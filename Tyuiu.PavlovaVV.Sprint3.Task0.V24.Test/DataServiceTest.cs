@@ -5,16 +5,19 @@ namespace Tyuiu.PavlovaVV.Sprint3.Task0.V24.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetSumSeries()
+        public void GetMultiplySeries_WithX5_Start1_Stop7_ReturnsCorrectResult()
         {
-            DataService ds = new DataService();
-            double value = 5;
+            DataService dataService = new DataService();
+            int x = 5;
             int startValue = 1;
             int stopValue = 7;
-            double res = ds.GetSumSeries(value, startValue, stopValue);
-            double wait = 0;
-            Assert.AreEqual(wait, res);
+
+            // Act
+            double result = dataService.GetMultiplySeries(x, startValue, stopValue);
+
+            // Assert
+            double expected = 0.1249;
+            Assert.AreEqual(expected, result, 0.0001);
         }
     }
 }
-

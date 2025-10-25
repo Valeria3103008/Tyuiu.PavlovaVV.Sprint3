@@ -5,13 +5,15 @@ namespace Tyuiu.PavlovaVV.Sprint3.Task0.V24.Lib
     {
         public double GetMultiplySeries(int value, int startValue, int stopValue)
         {
-            double sumSeries = 0;
-            int i;
-            for (i = startValue; i <= stopValue; i++)
+            double product = 1.0;
+
+            for (int i = startValue; i <= stopValue; i++)
             {
-                sumSeries = sumSeries * Math.Pow((3 / (i + Math.Pow(value, i))), 2);
+                double term = Math.Pow(3.0 / (i + Math.Pow(value, -i)), 2);
+                product *= term;
             }
-            return Math.Round(sumSeries, 3);
+
+            return Math.Round(product, 3);
         }
     }
 }
